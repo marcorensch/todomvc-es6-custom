@@ -5,13 +5,13 @@
   "author": "Ueli Kunz <kunz@ideadapt.net>",
   "license": "MIT",
   "scripts": {
-    "dev": "rm -rf .cache && npx parcel src/app/index.html",
+    "dev": "rm -rf .cache && npx parcel self/app/index.html",
     "start:ci": "npm run build && ./node_modules/.bin/http-server dist --port 1234",
     "test": "npm run test:unit && npm run test:e2e",
-    "test:unit": "./node_modules/.bin/mocha src/test/unit/**.mjs",
+    "test:unit": "./node_modules/.bin/mocha self/test/unit/**.mjs",
     "hub": "./node_modules/.bin/selenium-standalone start",
-    "test:e2e": "./node_modules/.bin/mocha src/test/e2e/*.test.mjs --timeout 5000",
-    "build": "rm -rf dist && rm -rf .parcel-cache && ./node_modules/.bin/parcel build src/app/index.html"
+    "test:e2e": "./node_modules/.bin/mocha self/test/e2e/*.test.mjs --timeout 5000",
+    "build": "rm -rf dist && rm -rf .parcel-cache && ./node_modules/.bin/parcel build self/app/index.html"
   },
   "browserslist": [
     "last 2 chrome versions"
