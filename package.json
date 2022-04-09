@@ -5,7 +5,8 @@
   "author": "Ueli Kunz <kunz@ideadapt.net>",
   "license": "MIT",
   "scripts": {
-    "dev": "rm -rf .cache && npx parcel self/app/index.html",
+    "dev": "rm -rf .parcel-cache && npx parcel self/app/index.html",
+    "devsrc": "rm -rf .parcel-cache && npx parcel src/app/index.html",
     "start:ci": "npm run build && ./node_modules/.bin/http-server dist --port 1234",
     "test": "npm run test:unit && npm run test:e2e",
     "test:unit": "./node_modules/.bin/mocha self/test/unit/**.mjs",
