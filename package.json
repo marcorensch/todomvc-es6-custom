@@ -5,12 +5,13 @@
   "author": "Ueli Kunz <kunz@ideadapt.net>",
   "license": "MIT",
   "scripts": {
-    "dev": "npx rimraf .parcel-cache && npx parcel src/app/index.html",
+    "dev": "npx rimraf .parcel-cache && npx parcel self/app/index.html",
+    "devsrc": "npx rimraf .parcel-cache && npx parcel src/app/index.html",
     "start:ci": "npm run build && npx http-server dist --port 1234",
     "test": "npm run test:unit && npm run test:e2e",
-    "test:unit": "npx mocha src/test/unit/**.mjs",
-    "test:e2e": "npx mocha src/test/e2e/*.test.mjs --timeout 5000",
-    "build": "npx rimraf dist .parcel-cache && npx parcel build src/app/index.html"
+    "test:unit": "npx mocha self/test/unit/**.mjs",
+    "test:e2e": "npx mocha self/test/e2e/*.test.mjs --timeout 5000",
+    "build": "npx rimraf dist .parcel-cache && npx parcel build self/app/index.html"
   },
   "browserslist": [
     "last 2 chrome versions"

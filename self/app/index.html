@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>TodoMVC ES6</title>
+    <link rel="stylesheet" href="index.css" />
+    <style>
+        input + .error{
+            margin: 0;
+            background-color: bisque;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>TodoMVC</h1>
+</header>
+<main id="the-app" class="todoapp">
+    <header>
+        <input class="new-todo" autofocus placeholder="Was muss getan werden?">
+    </header>
+    <ul class="todo-list">
+    </ul>
+</main>
+<footer>
+    Written by Marco Rensch !
+</footer>
+<script type="module" src="app.mjs"></script>
+</body>
+</html>
