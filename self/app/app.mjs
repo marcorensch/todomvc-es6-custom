@@ -1,3 +1,5 @@
+import {Store} from "./store.localstorage.mjs";
+
 class View {
     constructor(store) {
         this.store = store
@@ -62,38 +64,6 @@ class View {
     }
 }
 
-class Store {
-    #todos
-
-    constructor() {
-        this.todos = this.loadAllToDos()
-    }
-
-    loadAllToDos() {
-        const todos = JSON.parse(localStorage.getItem("todos") || "[]")
-        return todos;
-    }
-
-    storeToDos() {
-        localStorage.setItem("todos", JSON.stringify(this.todos))
-    }
-
-    add(todo) {
-        todo.id = new Date().getTime()
-        this.todos.push(todo)
-        this.storeToDos()
-        return todo.id
-    }
-
-    remove(id) {
-        let lengthBefore = this.todos.length
-        const itemIndex = this.todos.findIndex(i => i.id === id)
-        this.todos.splice(itemIndex, 1)
-        this.storeToDos()
-        return this.todos.length < lengthBefore
-    }
-}
-
 class Controller {
     constructor(store, view) {
         this.store = store
@@ -125,6 +95,6 @@ class Controller {
 }
 
 const store = new Store()
-const view = new View(store)
+const view = new View()
 const ctrl = new Controller(store, view)
 
