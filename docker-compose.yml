@@ -2,12 +2,12 @@ version: "3.3"
 
 services:
   client:
-    image: ideadapt/todomvc-client:latest
+    image: proexe/todomvc-client:latest
     networks:
       - todonet
 
   server:
-    image: ideadapt/todomvc-java-server:latest
+    image: proexe/todomvc-java-server:latest
     networks:
       - todonet
     environment:
